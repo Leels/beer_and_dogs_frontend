@@ -1,15 +1,15 @@
-class AuthorsController < ApplicationController
+class EstablishmentsController < ApplicationController
 
   def index
-    id = params[:id]
     response = HTTParty.get("http://localhost:3000/establishments", format: :plain)
-    @parsed = JSON.parse response, symbolize_names: true
+    @establishments = JSON.parse response, symbolize_names: true
     render :index
   end
 
   def show
+    id = params[:id]
     response = HTTParty.get("http://localhost:3000/establishments/#{id}", format: :plain)
-    @quotes = JSON.parse response, symbolize_names: true
+    @establishment = JSON.parse response, symbolize_names: true
     render :show
   end
 

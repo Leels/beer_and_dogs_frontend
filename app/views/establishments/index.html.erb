@@ -1,0 +1,8 @@
+<h2>Beer/dog establishments:</h2>
+  <% if @establishments %>
+    <% @establishments.each do |establishment| %>
+      <p><%= link_to establishment.fetch(:name), "/establishments/#{establishment.fetch(:id)}" %></p>
+    <% end %>
+  <% else %>
+  <p>Ruh roh! There are currently no dog-friendly beer stablishments that meet those search terms.</p>
+  <% end %>
