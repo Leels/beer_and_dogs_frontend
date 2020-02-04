@@ -38,7 +38,7 @@
    //       {
    //         var i=0;
    //         while(i < data.list.length-1)
-   //          {Marker[i] = new L.marker([data.list[i].coord.lat, data.list[i].coord.lon], {icon:dogIcon });
+   //          {Marker[i] = new L.marker([data.list[i].lat, data.list[i]lon], {icon:dogIcon });
    //          map.addLayer(Marker[i]);}
    //        });
 

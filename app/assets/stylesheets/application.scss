@@ -1,39 +1,50 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*/
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
- body {
-   background-color: #1d4063;
-   color: #ffe699;
- }
+body {
+  background-color: #1d4063;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  color: #ffe699;
+}
 
- .jumbotron {
-   background-color: #1d4063;
-   text-align: center;
- }
+.jumbotron {
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  background-color: #1d4063;
+  text-align: center;
+}
 
- a {
-   color: #cc6600;
- }
+a {
+  color: #cc6600;
+}
 
 .navbar {
-  padding-top: 2rem;
-  background-color: black;
+  padding-top: 1.5rem;
+  background-color: #364049;
 }
 
 .search {
   float: right;
   padding-right: 2rem;
+}
+
+#map {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  width: 700px; height: 500px;
+  border-radius: 4px;
 }
