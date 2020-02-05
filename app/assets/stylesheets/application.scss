@@ -72,3 +72,17 @@ hr {
   border-radius: 5px;
   border: solid 9px #d2e0f9;
 }
+
+.scroll-bar {
+  display: block;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: 400px;
+  overflow: scroll;
+  border-style: solid;
+  border-width: 6px;
+  scroll-behavior: smooth;
+}
