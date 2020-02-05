@@ -1,34 +1,59 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BeerAndDogsFrontend</title>
+  <title>Hop Hounds</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <link href="https://fonts.googleapis.com/css?family=Anton|Pacifico&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet"> -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Kalam:300,400,700&display=swap" rel="stylesheet"> -->
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/415ba7a6f3.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 </head>
-
 <body>
-  <div class="container-fluid">
-    <nav class="navbar navbar-dark bg-dark justify-content-between">
-      <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span></a>
-      <a class="navbar-brand" href="/establishments">View All Pet Friendly Portland Establishments</a>
-      <form class="form-inline search">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="/assets/bone-beer-solid-classic-blue.svg" width="30" height="30" class="d-inline-block align-top" alt="logo"/>
+      Hop Hounds
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href=<%= "/establishments" %>>Explore our breweries</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
       </form>
-    </nav>
-    <div id="clipped-title1">
-      <h1>HOP HOUNDS</h1>
+      <div id="signin">
+        <% if current_user %>
+        <%= current_user.username %> | <%= link_to "Sign out", '/signout' %>
+        <% else %>
+        <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
+        <% end %>
+      </div>
     </div>
-    <div id="clipped-title2">
-      <h1>Find the <em>pawfect</em> pint for you and your pup!</h1>
+  </nav>
+  <div class="container-fluid">
+    <center><img src="/assets/bone-beer-solid-white.svg" width="60" height="60" class="d-inline-block align-top" alt="logo"/></center>
+    <div class="container">
+      <hr>
+    </div>
+    <div id="clipped-title">
+      <h1>Hop Hounds</h1>
+    </div>
+    <div id="sub-title">
+      <h2>Find the <em>pawfect</em> pint for you and your pup!</h2>
     </div>
     <%= yield %>
   </div>
