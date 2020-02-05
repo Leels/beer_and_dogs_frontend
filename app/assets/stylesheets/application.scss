@@ -11,36 +11,54 @@
 * It is generally better to create a new file per style scope.
 */
 
-@import "bootstrap-sprockets";
 @import "bootstrap";
 
 body {
-  background-color: #1d4063;
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-  // background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
-  color: #ffe699;
+  background-color: #004680;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color: white;
 }
 
 .container-fluid {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-top: 112px;
+  padding-right: 16px;
+  padding-left: 16px;
 }
 
-a {
-  color: #cc6600;
+hr {
+  margin-top: 2rem;
+  border-top-color: white;
+  border-top-width: 2px;
 }
 
-.navbar {
-  padding-top: 1.5rem;
-  background-color: #364049;
+#clipped-title {
+  background: url("beer_img.jpeg");
+  color: #fff;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
-.search {
-  float: right;
-  padding-right: 2rem;
+#clipped-title, h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-transition: text-shadow 1s ease;
+  text-shadow: 0 0 1px rgba(0,0,0,.1);
+  margin: 0;
+  padding: 0;
+}
+
+#sub-title, h2 {
+  // font-family: 'Kalam', cursive;
+  text-align: center;
+}
+
+.enter {
+  text-align: center;
+  margin-top: 56px;
 }
 
 #map {
@@ -53,35 +71,4 @@ a {
   width: 700px; height: 500px;
   border-radius: 5px;
   border: solid 9px #d2e0f9;
-}
-
-#clipped-title1 {
-  background: url("beer_img.jpeg");
-  color: #fff;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-}
-
-#clipped-title1 h1 {
-  font-size: 150px;
-  font-family: Anton, sans-serif;
-  text-align: center;
-  -webkit-transition: text-shadow 1s ease;
-  text-shadow: 0 0 1px rgba(0,0,0,.1);
-  margin: 0;
-  padding: 0;
-}
-
-#clipped-title2 h1 {
-  font-size: 40px;
-  font-family: 'Lobster', cursive;
-  text-align: center;
-  color: #d2e0f9;
-  margin-top: -40px;
-  padding: 0;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
 }
