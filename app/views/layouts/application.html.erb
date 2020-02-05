@@ -7,27 +7,15 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css?family=Anton|Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet"> -->
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 </head>
 
 <body>
-  <div class="container">
-
-    <!-- <div class="pos-f-t">
-  <div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-dark p-4">
-      <h4 class="text-white">Collapsed content</h4>
-      <span class="text-muted">Toggleable via the navbar brand.</span>
-    </div>
-  </div>
-  <nav class="navbar navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </nav>
-</div> -->
-
+  <div class="container-fluid">
     <nav class="navbar navbar-dark bg-dark justify-content-between">
       <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span></a>
       <a class="navbar-brand" href="/establishments">View All Pet Friendly Portland Establishments</a>
@@ -36,10 +24,16 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </nav>
-    <div class="jumbotron">
-      <h1>Beers and Dogs</h1>
+    <!-- <div class="jumbotron">
+      <h1>The Pawfect Pint</h1>
+    </div> -->
+    <div id="clipped-title1">
+      <h1>HOP HOUNDS</h1>
     </div>
-  <%= yield %>
-</div>
+    <div id="clipped-title2">
+      <h1>Find the <em>pawfect</em> pint for you and your pup!</h1>
+    </div>
+    <%= yield %>
+  </div>
 </body>
 </html>

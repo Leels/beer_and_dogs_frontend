@@ -17,13 +17,16 @@
 body {
   background-color: #1d4063;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  // background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
   color: #ffe699;
 }
 
-.jumbotron {
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-  background-color: #1d4063;
-  text-align: center;
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 a {
@@ -42,9 +45,43 @@ a {
 
 #map {
   display: block;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
   width: 700px; height: 500px;
-  border-radius: 4px;
+  border-radius: 5px;
+  border: solid 9px #d2e0f9;
+}
+
+#clipped-title1 {
+  background: url("beer_img.jpeg");
+  color: #fff;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+#clipped-title1 h1 {
+  font-size: 150px;
+  font-family: Anton, sans-serif;
+  text-align: center;
+  -webkit-transition: text-shadow 1s ease;
+  text-shadow: 0 0 1px rgba(0,0,0,.1);
+  margin: 0;
+  padding: 0;
+}
+
+#clipped-title2 h1 {
+  font-size: 40px;
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  color: #d2e0f9;
+  margin-top: -40px;
+  padding: 0;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
 }
