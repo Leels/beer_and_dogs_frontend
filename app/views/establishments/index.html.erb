@@ -10,7 +10,7 @@ var dogIcon = L.icon({
 });
 
 // initialize the map
-var map = L.map('map').setView([45.50, -122.67], 13);
+var map = L.map('map').setView([45.520656, -122.677388], 13);
 
 // load a tile layer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -21,13 +21,14 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 }).addTo(map);
 
 
-let lat = 45.485036;
-let long = -122.639441;
+
+if (marker) {
+
+} else {
+  let marker;
+}
 
 
-
-L.marker([lat, long], {icon: dogIcon}).addTo(map);
-// marker1.bindPopup("<a href='https://www.giganticbrewing.com/'>Gigantic Brewery</a>").closePopup();
 
 </script>
 
@@ -38,6 +39,12 @@ L.marker([lat, long], {icon: dogIcon}).addTo(map);
       <p><%= link_to establishment.fetch(:name), "/establishments/#{ establishment.fetch(:id) }" %></p>
 
 
+      <script>
+
+        marker = L.marker([<%= establishment.fetch(:lat) %>, <%= establishment.fetch(:long) %>], {icon: dogIcon}).addTo(map);
+        marker.bindPopup('<%= link_to establishment.fetch(:name), "/establishments/#{ establishment.fetch(:id) }" %>').closePopup();
+
+      </script>
 
 
       <% end %>
