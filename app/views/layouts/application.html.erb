@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,6 +35,13 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search">
         <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
       </form>
+      <div id="signin">
+        <% if current_user %>
+        <%= current_user.username %> | <%= link_to "Sign out", '/signout' %>
+        <% else %>
+        <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
+        <% end %>
+      </div>
     </div>
   </nav>
   <div class="container-fluid">

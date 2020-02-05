@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2020_02_05_020430) do
+=======
 ActiveRecord::Schema.define(version: 0) do
+>>>>>>> 07d9e5c863a8e179e509def8e9267842b46bfcf3
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_hash"
+    t.string "password_salt"
+  end
+
+=======
+>>>>>>> 07d9e5c863a8e179e509def8e9267842b46bfcf3
 end
