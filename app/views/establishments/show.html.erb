@@ -8,3 +8,5 @@
 <h3>Dog Restrictions: <%= @establishment.fetch(:restrictions) %></h3>
 <h3>Kid-friendly: <%= @establishment.fetch(:kid_friendly) %></h3>
 <h3>Rating: <%= @establishment.fetch(:rating) %></h3>
+
+<p><%= link_to "View all beer places", establishments_path %></p>
