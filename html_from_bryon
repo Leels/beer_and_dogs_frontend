@@ -32,15 +32,6 @@
     minZoom: 9
   }).addTo(map);
 
-  // add markers to map
-   // var Marker = [];
-   // $.getJSON('http://api.openweathermap.org/data/2.5/box/city?bbox=1.89,49.05,2.86,48.63,10&cluster=yes', function(data)
-   //       {
-   //         var i=0;
-   //         while(i < data.list.length-1)
-   //          {Marker[i] = new L.marker([data.list[i].lat, data.list[i]lon], {icon:dogIcon });
-   //          map.addLayer(Marker[i]);}
-   //        });
 
 
   var marker1 = L.marker([45.485036, -122.639441], {icon: dogIcon}).addTo(map);
@@ -49,30 +40,8 @@
   var marker2 = L.marker([45.499004, -122.596995], {icon: dogIcon}).addTo(map);
   marker2.bindPopup("Another Brewery").closePopup
 
-  "<b>Gigantic Brewery</b><a href='https://www.giganticbrewing.com/'>Test</a>"
+
 
   </script>
 </body>
 </html>
-
-  <!-- // <% @markers.each do |i| %>
-  //  <%=   var `${marker} = L.marker([${marker}.lat, ${marker}.long`], {icon: dogIcon}).addTo(map);
-  //  `${marker}.bindPopup(${marker}.popup"`).closePopup();%>
-  // <% end %>
-
-  // var dynamicIcon = [];
-  //  var dIcon = [];
-  //  var weatherMarker = [];
-  //  $.getJSON('http://api.openweathermap.org/data/2.5/box/city?bbox=1.89,49.05,2.86,48.63,10&cluster=yes', function(data)
-  //        {
-  //          var i=0;
-  //          while(i < data.list.length-1)
-  //          {
-  // dynamicIcon[i] = new L.Icon({
-  //   iconUrl:'http://openweathermap.org/img/w/'+data.list[i].weather[0].icon+'.png',
-  // });
-  // weatherMarker[i] = new L.marker([data.list[i].coord.lat, data.list[i].coord.lon], {
-  //   icon:dynamicIcon[i] });
-  //   map.addLayer(weatherMarker[i]);
-  // }
-  // }); -->

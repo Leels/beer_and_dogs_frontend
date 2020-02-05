@@ -3,10 +3,10 @@
 <script>
 
 var dogIcon = L.icon({
-  iconUrl: 'dog.svg',
-  iconSize:     [38, 95], // size of the icon
-  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  iconUrl: "<%= asset_path 'dog.svg' %>",
+  iconSize:     [25, 25], // size of the icon
+  iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
+  popupAnchor:  [-3, -5] // point from which the popup should open relative to the iconAnchor
 });
 
 // initialize the map
@@ -20,32 +20,28 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
   minZoom: 9
 }).addTo(map);
 
-// add markers to map
- // var Marker = [];
- // $.getJSON('http://api.openweathermap.org/data/2.5/box/city?bbox=1.89,49.05,2.86,48.63,10&cluster=yes', function(data)
- //       {
- //         var i=0;
- //         while(i < data.list.length-1)
- //          {Marker[i] = new L.marker([data.list[i].coord.lat, data.list[i].coord.lon], {icon:dogIcon });
- //          map.addLayer(Marker[i]);}
- //        });
+
+let lat = 45.485036;
+let long = -122.639441;
 
 
-var marker1 = L.marker([45.485036, -122.639441], {icon: dogIcon}).addTo(map);
-marker1.bindPopup("<a href='https://www.giganticbrewing.com/'>Gigantic Brewery</a>").closePopup();
 
-var marker2 = L.marker([45.499004, -122.596995], {icon: dogIcon}).addTo(map);
-marker2.bindPopup("Another Brewery").closePopup
-
-"<b>Gigantic Brewery</b><a href='https://www.giganticbrewing.com/'>Test</a>"
+L.marker([lat, long], {icon: dogIcon}).addTo(map);
+// marker1.bindPopup("<a href='https://www.giganticbrewing.com/'>Gigantic Brewery</a>").closePopup();
 
 </script>
 
-<h2>Beer/dog establishments:</h2>
-  <% if @establishments %>
-    <% @establishments.each do |establishment| %>
-      <p><%= link_to establishment.fetch(:name), "/establishments/#{establishment.fetch(:id)}" %></p>
-    <% end %>
+
+      <h2>Beer/dog establishments:</h2>
+      <% if @establishments %>
+      <% @establishments.each do |establishment| %>
+      <p><%= link_to establishment.fetch(:name), "/establishments/#{ establishment.fetch(:id) }" %></p>
+
+
+
+
+      <% end %>
+
   <% else %>
   <p>Ruh roh! There are currently no dog-friendly beer stablishments that meet those search terms.</p>
   <% end %>
