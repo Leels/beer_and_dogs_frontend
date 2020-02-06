@@ -30,7 +30,7 @@
         </li>
       </ul>
       <% if current_user %>
-      <em>Cheers, <%= current_user.username %>!</em> <%= link_to "Sign out", "/signout", class: "text-dark link" %>
+        <span id="login-name"> <em>Cheers, <%= current_user.username %>!</em> </span><%= link_to "Sign out", "/signout", class: "text-dark link" %>
       <% else %>
       <%= link_to "Sign up", "signup", class: "nav-link" %> <%= link_to "Sign in", "/signin", class: "nav-link" %>
       <% end %>

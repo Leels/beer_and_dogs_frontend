@@ -1,12 +1,21 @@
-<h1>Sign up</h1>
-<%= form_for @user do |f| %>
-<%= f.label "User Name" %>
-<%= f.text_field :username %>
-  <%= f.label "Email" %>
-  <%= f.text_field :email %>
-  <%= f.label "Password" %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit "Sign Up" %>
-<% end %>
+<div class="container-fluid">
+  <h2>Sign up</h2>
+  <div class="container">
+    <hr>
+  </div>
+  <div class="user-forms">
+    <div class="form-group">
+      <%= form_for @user do |f| %>
+    <h4>  <%= f.label "User Name" %>
+      <%= f.text_field :username %>
+      <%= f.label "Email" %>
+      <%= f.text_field :email %> </h4>
+    <h4><%= f.label "Password" %>
+      <%= f.password_field :password %>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+      <%= f.submit "Sign Up", class: "btn btn-primary" %></h4>
+      <% end %>
+    </div>
+  </div>
+</div>

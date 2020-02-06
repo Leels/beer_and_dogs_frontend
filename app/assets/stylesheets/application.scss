@@ -109,3 +109,17 @@ h3 {
   margin-top: 28px;
   margin-bottom: 28px;
 }
+
+.user-forms{
+  text-align: center;
+  padding: 5rem;
+}
+
+.user-forms, .btn {
+  margin: 1rem;
+}
+
+#login-name {
+  color: #d9534f;
+  padding-right: 1rem;
+}
