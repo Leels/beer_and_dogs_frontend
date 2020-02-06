@@ -1,10 +1,17 @@
 <div class="container-fluid">
-  <h1>Sign in</h1>
-  <%= form_tag signin_path do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Sign In" %>
-  <% end %>  
-</div>
+  <h2>Sign in</h2>
+  <div class="container">
+    <hr>
+  </div>
+  <div class="user-forms">
+    <div class="form-group">
+      <%= form_tag signin_path do %>
+      <h4> <%= label_tag :email %>
+        <%= text_field_tag :email %>
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+        <%= submit_tag "Sign In", class: "btn btn-primary" %></h4>
+        <% end %>
+      </div>
+    </div>
+  </div>
