@@ -30,19 +30,18 @@
   <h1>Watering Holes</h1>
   <div id="search-criteria" class="container">
     <form action='/establishments' class="form-inline my-2 my-lg-0">
-      <div class="form-check form-check-inline">
-        <input name="indoor" class="form-check-input" type="checkbox" id="" value="None">
-        <label class="form-check-label" for="">Indoor access</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input  name='kids'class="form-check-input" type="checkbox" id="" value="Yes">
-        <label class="form-check-label" for="">Kid-friendly</label>
-      </div>
-      <input name='search' class="form-control mr-sm-2" type="search" placeholder="Search">
+      <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search">
       <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+    </form>
+    <form action='/establishments' class="form-inline my-2 my-lg-0">
+    <button class="btn btn-info my-2 my-sm-0" type="submit" name="indoor_access">Indoor Access</button>
+    <button class="btn btn-info my-2 my-sm-0" type="submit" name="kid_friendly">Kid-Friendly</button>
+    <button class="btn btn-info my-2 my-sm-0" type="submit" name="serves_food">Serves Food</button>
+    <a><%= link_to "Remove Filters", establishments_path, role: "button", class: "btn btn-outline-info" %></a>
     </form>
   </div>
   <div class="container">
+    <center><p>There are <%= @establishments.count %> watering holes.</p></center>
     <div class="scroll-box">
       <% if @establishments %>
       <% @establishments.each do |establishment| %>
