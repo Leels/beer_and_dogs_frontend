@@ -1,30 +1,61 @@
-<h1> <%= @establishment.fetch(:name) %></h1>
-<img src="<%= @establishment.fetch(:img) %>" alt="">
-<img src="<%= @establishment.fetch(:img2) %>" alt="">
-<img src="<%= @establishment.fetch(:img3) %>" alt="">
-<img src="<%= @establishment.fetch(:img4) %>" alt="">
-<a href="<%= @establishment.fetch(:website) %>">Website</a>
-<h3>Neighborhood: <%= @establishment.fetch(:neighborhood) %></h3>
-<h3>Address: <%= @establishment.fetch(:address) %></h3>
-<h3>Type of Establishment: <%= @establishment.fetch(:establishment_type) %></h3>
-<h3>Food: <%= @establishment.fetch(:food) %></h3>
-<h3>Dog Restrictions: <%= @establishment.fetch(:restrictions) %></h3>
-<h3>Kid-friendly: <%= @establishment.fetch(:kid_friendly) %></h3>
-
-<h4>Ratings & Reviews:</h4>
-
-<% if @reviews %>
-<% @reviews.each do |review| %>
-<% review.fetch(:rating).to_i.times do  %>
- <i class="fas fa-star"></i>
-<% end %>
-<p>"<%= review.fetch(:content_body) %>" -<%= review.fetch(:author) %></p>
-<% end %>
-
-<% else %>
-<h5>No reviews are listed for this establishment.</h5>
-<% end %>
-
-<% if current_user%>
-<p><%= link_to "Add a Review", "/establishments/reviews/new", class: "text-dark link" %></p>
-<% end %>
+<div class="container-fluid">
+  <h2><%= @establishment.fetch(:name) %></h2>
+  <div class="social-icons">
+    <center>
+      <h3><a href="<%= @establishment.fetch(:website) %>"><i class="fas fa-globe"></i></a> <i class="fab fa-instagram"></i> <i class="fab fa-facebook"></i></h3>
+    </center>
+  </div>
+  <div class="container">
+    <hr>
+    <div class="image-gallery">
+      <img class="insta" src="<%= @establishment.fetch(:img) %>" alt="Instagram" height="224" width="224">
+      <img class="insta" src="<%= @establishment.fetch(:img2) %>" alt="Instagram" height="224" width="224">
+      <img class="insta" src="<%= @establishment.fetch(:img3) %>" alt="Instagram" height="224" width="224">
+      <img class="insta" src="<%= @establishment.fetch(:img4) %>" alt="Instagram" height="224" width="224">
+    </div>
+    <div class="row">
+      <div class="col">
+        <h3>Information</h3>
+        <br>
+        <h6><i class="fas fa-question-circle text-info"></i> Where is it located?</h6>
+        <p><%= @establishment.fetch(:neighborhood) %>; <%= @establishment.fetch(:address) %></p>
+        <h6><i class="fas fa-question-circle text-info"></i> Is there food?</h6>
+        <% if @establishment.fetch(:food) != "None" %>
+        <p>Yes, food options inlcude: <%= @establishment.fetch(:food) %></p>
+        <% else %>
+        <p>No</p>
+        <% end %>
+        <h6><i class="fas fa-question-circle text-info"></i> Is it kid-friendly?</h6>
+        <% if @establishment.fetch(:kid_friendly) == true %>
+        <p>Yes</p>
+        <% else %>
+        <p>No</p>
+        <% end %>
+        <h6><i class="fas fa-question-circle text-info"></i> Are dogs allowed inside?</h6>
+        <% if @establishment.fetch(:restrictions) == "None" %>
+        <p>Yes</p>
+        <% else %>
+        <p>No, dogs are only allowed on the patio.</p>
+        <% end %>
+      </div>
+      <div class="col">
+        <h3>Reviews</h3>
+        <br>
+        <% if @reviews %>
+        <% @reviews.each do |review| %>
+        <% review.fetch(:rating).to_i.times do  %>
+        <i class="fas fa-star text-warning"></i>
+        <% end %>
+        from <%= review.fetch(:author) %>
+        <p>"<%= review.fetch(:content_body) %>"</p>
+        <% end %>
+        <% else %>
+        <p>There are no reviews.</p>
+        <% end %>
+        <% if current_user %>
+        <p><%= link_to "Write a Review", "/establishments/reviews/new", class: "text-white" %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

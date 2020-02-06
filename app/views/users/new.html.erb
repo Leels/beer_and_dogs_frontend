@@ -1,7 +1,8 @@
-<h1>Sign up</h1>
-<%= form_for @user do |f| %>
-<%= f.label "User Name" %>
-<%= f.text_field :username %>
+<div class="container-fluid">
+  <h1>Sign up</h1>
+  <%= form_for @user do |f| %>
+  <%= f.label "User Name" %>
+  <%= f.text_field :username %>
   <%= f.label "Email" %>
   <%= f.text_field :email %>
   <%= f.label "Password" %>
@@ -9,4 +10,5 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
   <%= f.submit "Sign Up" %>
-<% end %>
+  <% end %>
+</div>

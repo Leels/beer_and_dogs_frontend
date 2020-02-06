@@ -49,21 +49,19 @@ hr {
   -webkit-background-clip: text;
 }
 
-#clipped-title, h1 {
+h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 7.5rem;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
-  -webkit-transition: text-shadow 1s ease;
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
   line-height: 1;
   margin: 28px 0;
+}
+
+h1#clipped-title {
+  -webkit-transition: text-shadow 1s ease;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -72,12 +70,6 @@ h2 {
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
-}
-
-h3 {
-  font-weight: 400;
-  text-align: center;
-  margin-bottom: 0;
 }
 
 .enter {
@@ -108,4 +100,19 @@ h3 {
   padding: 16px;
   margin-top: 28px;
   margin-bottom: 28px;
+}
+
+.social-icons {
+  margin-top: 8px;
+}
+
+.image-gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 56px 0;
+}
+
+.insta {
+  border: 2px solid white;
 }
