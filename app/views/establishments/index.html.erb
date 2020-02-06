@@ -1,34 +1,34 @@
 <div id="map"></div>
+<div class="container-fluid">
 
-<script>
+  <script>
 
-var dogIcon = L.icon({
-  iconUrl: "<%= asset_path 'dog.svg' %>",
-  iconSize:     [25, 25], // size of the icon
-  iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
-  popupAnchor:  [-3, -5] // point from which the popup should open relative to the iconAnchor
-});
+  var dogIcon = L.icon({
+    iconUrl: '<%= asset_path "dog-solid.svg" %>',
+    iconSize:     [25, 25], // size of the icon
+    iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -5] // point from which the popup should open relative to the iconAnchor
+  });
 
 // initialize the map
 var map = L.map('map').setView([45.520656, -122.677388], 13);
 
-// load a tile layer
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-{
-  attribution: 'Tiles by a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-  maxZoom: 17,
-  minZoom: 9
-}).addTo(map);
+  // load a tile layer
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  {
+    attribution: 'Tiles by a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 17,
+    minZoom: 9
+  }).addTo(map);
 
-
+  let lat = 45.485036;
+  let long = -122.639441;
 
 if (marker) {
 
 } else {
   let marker;
 }
-
-
 
 </script>
 
@@ -39,7 +39,6 @@ if (marker) {
       <% @establishments.each do |establishment| %>
       <p><%= link_to establishment.fetch(:name), "/establishments/#{ establishment.fetch(:id) }" %></p>
 
-
       <script>
 
         marker = L.marker([<%= establishment.fetch(:lat) %>, <%= establishment.fetch(:long) %>], {icon: dogIcon}).addTo(map);
@@ -47,10 +46,10 @@ if (marker) {
 
       </script>
 
-
       <% end %>
     </div>
 
   <% else %>
-  <p>Ruh roh! There are currently no dog-friendly beer stablishments that meet those search terms.</p>
+    <p>Ruh roh! There are currently no dog-friendly watering holes that meet your search criteria.</p>
   <% end %>
+</div>
