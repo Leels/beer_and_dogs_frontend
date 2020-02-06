@@ -1,4 +1,8 @@
 <h1> <%= @establishment.fetch(:name) %></h1>
+<img src="<%= @establishment.fetch(:img) %>" alt="">
+<img src="<%= @establishment.fetch(:img2) %>" alt="">
+<img src="<%= @establishment.fetch(:img3) %>" alt="">
+<img src="<%= @establishment.fetch(:img4) %>" alt="">
 <a href="<%= @establishment.fetch(:website) %>">Website</a>
 <h3>Neighborhood: <%= @establishment.fetch(:neighborhood) %></h3>
 <h3>Address: <%= @establishment.fetch(:address) %></h3>
