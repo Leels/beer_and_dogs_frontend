@@ -1,6 +1,5 @@
 <div id="map"></div>
 <div class="container-fluid">
-
   <script>
 
     var dogIcon = L.icon({
@@ -28,44 +27,41 @@
     }
 
   </script>
-
   <h1>Watering Holes</h1>
-  <div id="search-criteria">
-    <div class="row">
-      <div class="col">
-        <form  action='/establishments' class="form-inline my-2 my-lg-0">
-          <input name='search' class="form-control mr-sm-2" type="search" placeholder="Search">
-          <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-        </form>
+  <div id="search-criteria" class="container">
+    <form class="form-inline my-2 my-lg-0">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="" value="">
+        <label class="form-check-label" for="">Indoor access</label>
       </div>
-      <div class="col">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="" value="">
-          <label class="form-check-label" for="">Indoor access</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="" value="">
-          <label class="form-check-label" for="">Kid-friendly</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="" value="">
-          <label class="form-check-label" for="">Food</label>
-        </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="" value="">
+        <label class="form-check-label" for="">Kid-friendly</label>
       </div>
-    </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="" value="">
+        <label class="form-check-label" for="">Food</label>
+      </div>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search">
+      <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+    </form>
   </div>
-  <div class="scroll-bar">
+  <div class="container">
+    <hr>
+  <div class="scroll-box">
     <% if @establishments %>
     <% @establishments.each do |establishment| %>
-    <p><%= link_to establishment.fetch(:name), "/establishments/#{ establishment.fetch(:id) }" %></p>
+    <p><%= link_to establishment.fetch(:name), "/establishments/#{ establishment.fetch(:id) }", class: "text-white" %></p>
     <script>
       marker = L.marker([<%= establishment.fetch(:lat) %>, <%= establishment.fetch(:long) %>], {icon: dogIcon}).addTo(map);
       marker.bindPopup('<%= link_to establishment.fetch(:name), "/establishments/#{ establishment.fetch(:id) }" %>').closePopup();
     </script>
     <% end %>
   </div>
+  <center><i class="fas fa-arrow-circle-down"></i></center>
+      <center><p class="note">Scroll down to view the complete list.</p></center>
+  </div>
   <% else %>
   <p>Ruh roh! There are currently no dog-friendly watering holes that meet your search criteria.</p>
   <% end %>
-
 </div>
