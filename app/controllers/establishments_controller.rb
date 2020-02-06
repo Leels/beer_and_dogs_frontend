@@ -1,7 +1,15 @@
 class EstablishmentsController < ApplicationController
 
   def index
-    if params[:search]
+    if params[:kids]
+      response = HTTParty.get("http://localhost:3000/establishments?query=#{params[:kids]}", format: :plain)
+      @establishments = JSON.parse response, symbolize_names: true
+      render :index
+    elsif params[:indoor]
+      response = HTTParty.get("http://localhost:3000/establishments?query=#{params[:indoor]}", format: :plain)
+      @establishments = JSON.parse response, symbolize_names: true
+      render :index
+    elsif params[:search]
       response = HTTParty.get("http://localhost:3000/establishments?query=#{params[:search]}", format: :plain)
       @establishments = JSON.parse response, symbolize_names: true
       render :index
