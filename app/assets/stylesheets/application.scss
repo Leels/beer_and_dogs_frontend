@@ -33,7 +33,7 @@ hr {
 }
 
 #clipped-title {
-  background: url("beer_img.jpeg");
+  background: url("beerwithfoam.jpeg");
   color: #fff;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -52,7 +52,6 @@ hr {
 }
 
 #sub-title, h2 {
-  // font-family: 'Kalam', cursive;
   text-align: center;
 }
 
@@ -71,4 +70,8 @@ hr {
   width: 700px; height: 500px;
   border-radius: 5px;
   border: solid 9px #d2e0f9;
+}
+
+.navbar {
+  color: #e68a00;
 }
