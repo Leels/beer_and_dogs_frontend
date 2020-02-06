@@ -1,12 +1,12 @@
-<h1> <%= @establishment.fetch(:name) %></h1>
-<img src="<%= @establishment.fetch(:image) %>" alt="Image of dog-place">
-<a href="<%= @establishment.fetch(:website) %>">Website</a>
-<h3>Neighborhood: <%= @establishment.fetch(:neighborhood) %></h3>
-<h3>Address: <%= @establishment.fetch(:address) %></h3>
-<h3>Type of Establishment: <%= @establishment.fetch(:establishment_type) %></h3>
-<h3>Food: <%= @establishment.fetch(:food) %></h3>
-<h3>Dog Restrictions: <%= @establishment.fetch(:restrictions) %></h3>
-<h3>Kid-friendly: <%= @establishment.fetch(:kid_friendly) %></h3>
-<h3>Rating: <%= @establishment.fetch(:rating) %></h3>
+<div class="container-fluid">
+  <h2><%= @establishment.fetch(:name) %></h2>
+  <a href="<%= @establishment.fetch(:website) %>">Website</a>
+  <h3>Neighborhood: <%= @establishment.fetch(:neighborhood) %></h3>
+  <h3>Address: <%= @establishment.fetch(:address) %></h3>
+  <h3>Type of Establishment: <%= @establishment.fetch(:establishment_type) %></h3>
+  <h3>Food: <%= @establishment.fetch(:food) %></h3>
+  <h3>Dog Restrictions: <%= @establishment.fetch(:restrictions) %></h3>
+  <h3>Kid-friendly: <%= @establishment.fetch(:kid_friendly) %></h3>
 
-<p><%= link_to "View all beer places", establishments_path %></p>
+  <p><%= link_to "View all beer places", establishments_path %></p>
+</div>
