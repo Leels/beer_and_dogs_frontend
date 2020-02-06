@@ -1,5 +1,4 @@
 <h1> <%= @establishment.fetch(:name) %></h1>
-<img src="<%= @establishment.fetch(:image) %>" alt="Image of dog-place">
 <a href="<%= @establishment.fetch(:website) %>">Website</a>
 <h3>Neighborhood: <%= @establishment.fetch(:neighborhood) %></h3>
 <h3>Address: <%= @establishment.fetch(:address) %></h3>
@@ -7,6 +6,24 @@
 <h3>Food: <%= @establishment.fetch(:food) %></h3>
 <h3>Dog Restrictions: <%= @establishment.fetch(:restrictions) %></h3>
 <h3>Kid-friendly: <%= @establishment.fetch(:kid_friendly) %></h3>
+<<<<<<< HEAD
+
+
+<h4>Ratings & Reviews:</h4>
+
+<% if @reviews %>
+<% @reviews.each do |review| %>
+<% review.fetch(:rating).to_i.times do  %>
+ <i class="fas fa-star"></i>
+<% end %>
+<p>"<%= review.fetch(:content_body) %>" -<%= review.fetch(:author) %></p>
+<% end %>
+
+<% else %>
+<h5>No reviews are listed for this establishment.</h5>
+<% end %>
+=======
 <h3>Rating: <%= @establishment.fetch(:rating) %></h3>
 
 <p><%= link_to "View all beer places", establishments_path %></p>
+>>>>>>> d98b2ef5267a5010a808b16c15a12b8de54ab20d
