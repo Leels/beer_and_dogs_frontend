@@ -1,12 +1,27 @@
-<div class="container-fluid">
-  <h2><%= @establishment.fetch(:name) %></h2>
-  <a href="<%= @establishment.fetch(:website) %>">Website</a>
-  <h3>Neighborhood: <%= @establishment.fetch(:neighborhood) %></h3>
-  <h3>Address: <%= @establishment.fetch(:address) %></h3>
-  <h3>Type of Establishment: <%= @establishment.fetch(:establishment_type) %></h3>
-  <h3>Food: <%= @establishment.fetch(:food) %></h3>
-  <h3>Dog Restrictions: <%= @establishment.fetch(:restrictions) %></h3>
-  <h3>Kid-friendly: <%= @establishment.fetch(:kid_friendly) %></h3>
+<h1> <%= @establishment.fetch(:name) %></h1>
+<a href="<%= @establishment.fetch(:website) %>">Website</a>
+<h3>Neighborhood: <%= @establishment.fetch(:neighborhood) %></h3>
+<h3>Address: <%= @establishment.fetch(:address) %></h3>
+<h3>Type of Establishment: <%= @establishment.fetch(:establishment_type) %></h3>
+<h3>Food: <%= @establishment.fetch(:food) %></h3>
+<h3>Dog Restrictions: <%= @establishment.fetch(:restrictions) %></h3>
+<h3>Kid-friendly: <%= @establishment.fetch(:kid_friendly) %></h3>
 
-  <p><%= link_to "View all beer places", establishments_path %></p>
-</div>
+
+<h4>Ratings & Reviews:</h4>
+
+<% if @reviews %>
+<% @reviews.each do |review| %>
+<% review.fetch(:rating).to_i.times do  %>
+ <i class="fas fa-star"></i>
+<% end %>
+<p>"<%= review.fetch(:content_body) %>" -<%= review.fetch(:author) %></p>
+<% end %>
+
+<% else %>
+<h5>No reviews are listed for this establishment.</h5>
+<% end %>
+
+<% if current_user%>
+<p><%= link_to "Add a Review", "/establishments/reviews/new", class: "text-dark link" %></p>
+<% end %>
